@@ -26,7 +26,7 @@
             type="com.example.lunchtray.model.OrderViewModel" />
 
         <variable
-            name="checkout"
+            name="checkoutFragment"
             type="com.example.lunchtray.ui.order.CheckoutFragment" />
     </data>
 
@@ -138,6 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"
+                android:onClick="@{() -> checkoutFragment.submitOrder()}"
                 android:text="@string/submit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -150,6 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/base_margin"
+                android:onClick="@{() -> checkoutFragment.cancelOrder()}"
                 android:text="@string/cancel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
