@@ -51,7 +51,7 @@ class CheckoutFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCheckoutBinding.inflate(inflater, container, false)
         val root = binding.root
 
@@ -74,7 +74,7 @@ class CheckoutFragment : Fragment() {
      * Cancel the order and start over.
      */
     fun cancelOrder() {
-        // TODO: Reset order in view model
+        sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
     }
 
@@ -84,7 +84,7 @@ class CheckoutFragment : Fragment() {
     fun submitOrder() {
         // Show snackbar to "confirm" order
         Snackbar.make(binding.root, R.string.submit_order, Snackbar.LENGTH_SHORT).show()
-        // TODO: Reset order in view model
+        sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
     }
 

@@ -50,7 +50,7 @@ class EntreeMenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentEntreeMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
@@ -76,7 +76,7 @@ class EntreeMenuFragment : Fragment() {
      * Cancel the order and start over.
      */
     fun cancelOrder() {
-        // TODO: Reset order in view model
+        sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_entreeMenuFragment_to_startOrderFragment)
     }
 
